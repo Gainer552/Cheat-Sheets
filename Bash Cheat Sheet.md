@@ -1,0 +1,299 @@
+# 𝗦𝗵𝗲𝗯𝗮𝗻𝗴
+
+- `#!/bin/bash` - Used to declare the script as a Bash script.
+Note: Must always be placed at the top of the script.
+
+# 𝗘𝗺𝗯𝗲𝗱𝗱𝗲𝗱 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸
+
+- `cat <<EOF`
+- `echo "Code goes here!"`
+- `EOF`
+Note: Used to embed a code block, typically ASCII art, into a script. Only runs until the end marker, then the rest of the script is executed.
+
+# 𝗘𝘀𝘀𝗲𝗻𝘁𝗶𝗮𝗹 𝗕𝗮𝘀𝗵 𝗕𝘂𝗶𝗹𝘁𝗶𝗻 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀
+
+### Navigation & Directories
+
+- `cd` - Change the current working directory.
+- `pwd` - Print the current working directory.
+- `pushd` - Save current directory, then change.
+- `popd` - Restore the previous directory from the stack.
+- `dirs` - Display directory stack.
+
+### Shell Controls & Environment
+
+- `alias` - Define or display command aliases.
+- `unalias` - Remove command aliases.
+- `set` - Set/unset shell variables and options.
+- `unset` - Remove variable or function values.
+- `export` - Set environment variables.
+- `readonly` - Mark variables/functions as read-only.
+- `source / .` - Execute commands from a file in the current shell.
+- `exec` - Replace the shell with a new command.
+- `type` - Show how a command would be interpreted.
+- `history` - Display or manage command history.
+
+### I/O & File Operations
+
+- `echo` - Display a line of text.
+- `printf` - Format and print data.
+- `read` - Read a line from standard input.
+- `readarray / mapfile` - Read lines from `STDIN` into an array variable.
+
+### Flow Control & Evaluation
+
+- `if/then/else/fi` - Conditional structure.
+- `for` - Loop structure.
+- `while / until` - Loop structures.
+- `case / esac` - Conditional branch structure.
+- `function / { }` - Define a function.
+- `test / [ ]` - Evaluate expressions.
+- `[[ ]]` - Conditional command (extended test).
+- `true / false` - Return `0` or `1` exit status.
+
+### Miscellaneous
+
+- `clear` - Clear the terminal screen.
+- `exit` - Exit the current shell.
+- `help` - Display help on builtins.
+- `jobs` - List active jobs.
+- `kill` - Send a signal to a process.
+- `wait` - Wait for a process to finish.
+- `hash` - Track location of accessed commands.
+
+# 𝘿𝙖𝙩𝙖 𝙏𝙮𝙥𝙚𝙨
+
+- `String (Str)` - `"This is a string"`
+- `Integer (Int)` - `10`
+- `Float` - `20.12`
+- `Boolean (Bool)` - `true/false`
+- `Character (Char)` - Character literals and symbols commonly handled in shell input.
+- `Null` - Undefined, has no value.
+- `Indexed Arrays` - Collection of different data types (ordered), first value always has index `0`.
+- `Associative Arrays` - Collection of different data types (unordered), values are indexed by associations with string values.
+- `References` - Pointers to other variables, which can be used to retrieve data for another variable or function.
+
+# 𝗥𝗲𝘀𝗲𝗿𝘃𝗲𝗱 𝗪𝗼𝗿𝗱𝘀/𝗞𝗲𝘆𝘄𝗼𝗿𝗱𝘀
+
+- `!` - Used for logical negation.
+- `[[` - Starts a conditional test.
+- `]]` - Ends a conditional test.
+- `case` - Introduces a case conditional.
+- `do` - Starts a loop body.
+- `done` - Ends a loop body.
+- `elif` - `Else if` branch in a conditional.
+- `else` - Default branch in a conditional.
+- `esac` - Ends a case statement.
+- `fi` - Ends an `if` statement.
+- `for` - Introduces a `for` loop.
+- `function` - Defines a shell function (optional in most cases).
+- `if` - Introduces an `if` statement.
+- `in` - Used within `for`, `case`, or `select`.
+- `select` - Creates a positional menu from a list.
+- `then` - Follows `if` or `elif` conditions.
+- `time` - Used to time pipelines and shell commands.
+- `until` - Introduces an `until` loop.
+- `while` - Introduces a `while` loop.
+- `coproc` - Bash `4.0+` asynchronous co-process.
+
+# 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿𝘀
+
+### Logical Operators
+
+- `#` - Write comments.
+- `""` - Whitespace.
+- `&` - Run command in the background.
+- `;` - Separate commands on the same line.
+- `&&` - AND, run another command.
+- `||` - OR, run command if condition evaluates to true.
+
+# 𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿𝘆 𝗧𝗿𝗮𝘃𝗲𝗿𝘀𝗮𝗹
+
+- `~` - Home directory.
+- `.` - Current directory.
+- `..` - Parent directory.
+- `/` - Root directory, filename splitter, and can perform division.
+
+# 𝗤𝘂𝗼𝘁𝗶𝗻𝗴
+
+- `\` - Escapes a character and is treated literally.
+- `''` - Full quoting, treated literally.
+- `""` - Partial quoting results in word-splitting not being performed.
+
+# 𝗥𝗲𝗱𝗶𝗿𝗲𝗰𝘁𝗶𝗼𝗻
+
+- `>` - Writes to a file. Will overwrite contents.
+- `>>` - Appends to a file, but does not overwrite contents.
+- `<` - Reads contents of a file as standard input.
+- `<<` - Embed code blocks into a script.
+- `<<<` - Takes a string as input.
+- `|` - Redirects standard output from one command to another.
+
+# 𝗚𝗿𝗼𝘂𝗽𝗶𝗻𝗴
+
+- `{}` - Inline group, all commands treated as one, must be terminated with a semicolon at the final command.
+- `()` - Subshell, all commands executed in a hidden shell.
+Note: If the parent process is killed before the child process, the child process is inherited by `init`, with a default `PID` of `1`, known as a zombie process. Variables in a subshell are only available inside of it.
+- `(())` - Arithmetic expression, for doing mathematical operations.
+Note: Can only perform integer math. If decimals or square roots are required, use the `bc` utility.
+
+# 𝗚𝗹𝗼𝗯𝘀/𝗪𝗶𝗹𝗱𝗰𝗮𝗿𝗱𝘀
+
+- `?` - Matches for a single character.
+- `*` - Matches for any amount of characters.
+- `[...]` - Matches for lists of characters and ranges.
+
+# 𝗘𝘅𝗮𝗺𝗽𝗹𝗲𝘀
+
+## 𝗚𝗲𝗻𝗲𝗿𝗮𝗹 𝗧𝘆𝗽𝗲𝘀
+
+### 𝗩𝗮𝗿𝗶𝗮𝗯𝗹𝗲 (𝗩𝗮𝗿)
+
+- `#Initialize a variable.`
+- `[IDENTIFIER]=[VALUE]`
+
+### 𝗜𝗻𝘁𝗲𝗴𝗲𝗿 (𝗜𝗻𝘁)
+
+- `#Declare an integer.`
+- `declare -i x=0`
+- `let -i x=0`
+
+### 𝗙𝗹𝗼𝗮𝘁
+
+- `#Declare a float.`
+- `[IDENTIFIER]=10.5`
+
+### 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 (𝗙𝘂𝗻𝗰)
+
+- `#Declare a function.`
+- `[IDENTIFIER] () {`
+- `    echo "Hello world!"`
+- `}`
+- `#Call the function.`
+- `[IDENTIFIER]`
+
+## 𝗖𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁𝘀
+
+### 𝗕𝗼𝗼𝗹𝗲𝗮𝗻 (𝗕𝗼𝗼𝗹)
+
+- `#Declare a boolean.`
+- `true/false`
+- `#Use boolean in a conditional statement.`
+- `[identifier]="true"`
+- `if [[ "$identifier" == "true" ]]; then`
+- `    echo "The boolean is true."`
+- `else`
+- `    echo "The boolean is false."`
+- `fi`
+
+### 𝗜𝗳 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁
+
+- `#Define a variable.`
+- `[NUMBER1]=[5]`
+- `[NUMBER2]=3`
+- `#Check if the number is greater than 5.`
+- `if [ "$[NUMBER1]" -gt $[NUMBER2] ]; then`
+- `  echo "The value is greater than $NUMBER2"`
+- `fi`
+
+### 𝗜𝗳/𝗘𝗹𝘀𝗲 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁
+
+- `#Initialize a variable.`
+- `[NUMBER]=8`
+- `#Start the comparison.`
+- `if [ "$[NUMBER]" -gt 10 ]; then`
+- `  echo "Number is greater than 10!"`
+- `else`
+- `  echo "Number is 10 or less."`
+- `fi`
+
+## 𝗟𝗼𝗼𝗽𝘀
+
+### 𝗙𝗼𝗿 𝗟𝗼𝗼𝗽
+
+- `# This script iterates from 1 to 5 and prints the current number.`
+- `for i in 1 2 3 4 5; do`
+- `  echo "Number: $i"`
+- `done`
+
+### 𝗪𝗵𝗶𝗹𝗲 𝗟𝗼𝗼𝗽
+
+- `#Initialize the counter variable.`
+- `i=1`
+- `#Loop while 'i' is less than or equal to 5.`
+- `while [ $i -le 5 ]`
+- `do`
+- `#Print the current value of the counter.`
+- `  echo "Count is $i."`
+- `#Increment the counter by 1.`
+- `  ((i++))`
+- `done`
+- `echo "Loop finished"`
+
+## 𝗔𝗿𝗿𝗮𝘆𝘀
+
+### 𝗜𝗻𝗱𝗲𝘅𝗲𝗱 𝗔𝗿𝗿𝗮𝘆
+
+- `#Declare an array.`
+- `[IDENTIFIER]=("value1" "value2" "value3")`
+- `#Access a specific element.`
+- `echo "[NAME]: ${[ARRAY][INDEX]}"`
+- `#Access every element.`
+- `echo "[NAME]: ${[ARRAY][@]}"`
+- `#Loop through array.`
+- `echo "Looping:"`
+- `for [ELEMENT] in "${[ARRAY][@]}"; do`
+- `    echo "- $[ELEMENT]"`
+- `done`
+
+### 𝗔𝘀𝘀𝗼𝗰𝗶𝗮𝘁𝗶𝘃𝗲 𝗔𝗿𝗿𝗮𝘆
+
+- `#Declare an associative array using the -A flag.`
+- `declare -A [IDENTIFIER]`
+- `#Add key-value pairs.`
+- `[IDENTIFIER][name]="John Doe"`
+- `[IDENTIFIER][email]="john@example.com"`
+- `[IDENTIFIER][age]=30`
+- `#Access and print a specific value using its key.`
+- `echo "Name: ${[IDENTIFIER][name]}"`
+- `echo "Email: ${[IDENTIFIER][email]}"`
+- `# Print all keys.`
+- `echo "Available information keys: ${![IDENTIFIER][@]}"`
+- `# Print all values.`
+- `echo "User details values: ${[IDENTIFIER][@]}"`
+- `# Iterate over all key-value pairs.`
+- `echo "Looping through all details:"`
+- `for key in "${![IDENTIFIER][@]}"; do`
+- `    echo "$key => ${[IDENTIFIER][$key]}"`
+- `done`
+
+## 𝗢𝘁𝗵𝗲𝗿
+
+### 𝗖𝗮𝘀𝗲 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁
+
+- `echo -n "Enter a letter (a, b, or c): "`
+- `read letter_input`
+- `case $letter_input in`
+- `    a)`
+- `        echo "You entered the first letter of the alphabet."`
+- `        ;;`
+- `    b)`
+- `        echo "You entered the second letter."`
+- `        ;;`
+- `    c)`
+- `        echo "You entered the third letter."`
+- `        ;;`
+- `    *)`
+- `        echo "You entered something else entirely."`
+- `        ;;`
+- `esac`
+
+### 𝗢𝗯𝗷𝗲𝗰𝘁
+
+- `#Create an object.`
+- `declare -A [IDENTIFIER]`
+- `[IDENTIFIER][string]="String"`
+- `[IDENTIFIER][number]=30`
+- `[IDENTIFIER]=(string number)`
+- `echo "string: ${[IDENTIFIER][string]}"`
+- `echo "number: ${[IDENTIFIER][number]}"`

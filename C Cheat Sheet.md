@@ -1,0 +1,434 @@
+# 𝗦𝗵𝗲𝗯𝗮𝗻𝗴
+
+- `#!/usr/bin/env -S cc -x c - -o /tmp/cprog && /tmp/cprog`
+Note: Optional Unix shell trick for piping/embedding C into a compiler and running it. Standard C source files do not require a shebang because C is compiled before execution.
+
+# 𝗘𝗺𝗯𝗲𝗱𝗱𝗲𝗱 𝗖𝗼𝗱𝗲 𝗕𝗹𝗼𝗰𝗸
+
+- `/*`
+- `Code goes here!`
+- `*/`
+Note: Multi-line comment block, used for documentation, temporarily disabling code, or explaining logic. C also supports single-line comments with `//` in `C99+`.
+
+# 𝗘𝘀𝘀𝗲𝗻𝘁𝗶𝗮𝗹 𝗖 𝗕𝘂𝗶𝗹𝘁-𝗶𝗻 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀
+
+### Program Structure & Compilation
+
+- `#include` - Include declarations from a header file.
+- `#define` - Define a macro or symbolic constant.
+- `#undef` - Undefine a macro.
+- `typedef` - Create a type alias.
+- `sizeof` - Return the size of a type or object in bytes.
+- `_Alignof` - Return the alignment requirement of a type.
+- `_Static_assert` - Perform a compile-time assertion.
+- `#line` - Change reported line/file information for the compiler.
+- `#pragma` - Compiler-specific instruction.
+- `#error` - Emit a compile-time error.
+- `#if / #ifdef / #ifndef / #elif / #else / #endif` - Conditional compilation directives.
+
+### Storage, Type, and Linkage
+
+- `auto` - Automatic storage duration (default for local variables).
+- `register` - Hint that a variable may be stored in a CPU register.
+- `static` - Static storage duration or internal linkage.
+- `extern` - Declare an object/function defined elsewhere.
+- `const` - Read-only qualifier.
+- `volatile` - Indicates a value may change unexpectedly.
+- `restrict` - Pointer aliasing optimization qualifier (`C99+`).
+- `signed` - Signed integer modifier.
+- `unsigned` - Unsigned integer modifier.
+- `short` - Short integer modifier/type.
+- `long` - Long integer modifier/type.
+- `inline` - Suggest inline expansion of a function.
+- `_Thread_local` - Thread-local storage duration.
+- `_Atomic` - Atomic type qualifier.
+
+### Control Flow
+
+- `if / else` - Conditional structure.
+- `switch / case / default` - Multi-branch selection structure.
+- `for` - Loop structure.
+- `while` - Pre-test loop.
+- `do / while` - Post-test loop.
+- `goto` - Unconditional jump to a label.
+- `break` - Exit a loop or switch.
+- `continue` - Skip to the next loop iteration.
+- `return` - Return from a function.
+
+### Composite Types & Abstractions
+
+- `struct` - Group related fields under one user-defined type.
+- `union` - Store different fields in the same memory location.
+- `enum` - Define named integral constants.
+
+### Standard Library Essentials
+
+- `printf` - Print formatted output to `stdout`.
+- `fprintf` - Print formatted output to a file/stream.
+- `sprintf / snprintf` - Write formatted output to a string.
+- `scanf` - Read formatted input from `stdin`.
+- `fscanf / sscanf` - Read formatted input from a file/string.
+- `puts` - Print a string followed by a newline.
+- `putchar` - Print a single character.
+- `getchar` - Read a single character.
+- `fgets` - Read a line safely from a stream.
+- `malloc` - Allocate memory.
+- `calloc` - Allocate zero-initialized memory.
+- `realloc` - Resize previously allocated memory.
+- `free` - Release dynamically allocated memory.
+- `memcpy` - Copy memory.
+- `memmove` - Copy memory safely with overlap.
+- `memset` - Fill memory with a byte value.
+- `memcmp` - Compare memory blocks.
+- `strlen` - Get the length of a string.
+- `strcpy / strncpy` - Copy strings.
+- `strcat / strncat` - Concatenate strings.
+- `strcmp / strncmp` - Compare strings.
+- `strchr / strstr` - Search within strings.
+- `fopen / fclose` - Open/close a file.
+- `fread / fwrite` - Binary file I/O.
+- `fflush` - Flush a stream buffer.
+- `remove / rename` - Delete or rename a file.
+- `perror` - Print a system error message.
+- `exit` - Terminate the program.
+- `abort` - Terminate abnormally.
+- `qsort` - Generic sort.
+- `bsearch` - Binary search.
+- `time / clock` - Retrieve time/CPU time.
+- `rand / srand` - Pseudorandom number generation.
+- `fread() / fwrite()` - Read/write raw bytes.
+- `fflush()` - Flush buffered output.
+
+# 𝘿𝙖𝙩𝙖 𝙏𝙮𝙥𝙚𝙨
+
+- `Character (Char)` - `'A'`, stores a character or small integer value.
+- `Signed Character` - `signed char`
+- `Unsigned Character` - `unsigned char`
+- `Short Integer (Short)` - `short`, `short int`
+- `Unsigned Short` - `unsigned short`
+- `Integer (Int)` - `int`
+- `Unsigned Integer` - `unsigned int`
+- `Long Integer` - `long`, `long int`
+- `Unsigned Long` - `unsigned long`
+- `Long Long Integer` - `long long`
+- `Unsigned Long Long` - `unsigned long long`
+- `Float` - `20.12f`
+- `Double` - `20.12`
+- `Long Double` - `20.12L`
+- `Boolean (Bool)` - `_Bool` or `bool` (from `stdbool.h`), `true/false`
+- `Void` - No value, often used for functions or generic pointers.
+- `size_t` - Unsigned type used for sizes and counts.
+- `ptrdiff_t` - Signed type used for pointer differences.
+- `wchar_t` - Wide character type.
+- `NULL` - Null pointer constant, represents no valid memory address.
+- `Arrays` - Fixed-size ordered collection of elements of the same type.
+- `Pointers` - Variables that store memory addresses.
+- `Strings` - Arrays of `char` terminated by a null character `\0`.
+- `Structures` - User-defined grouped fields with named members.
+- `Unions` - User-defined grouped fields sharing the same storage.
+- `Enumerations` - Named integer constants.
+- `Functions` - Callable blocks of code.
+- `Function Pointers` - Pointers to functions, used for callbacks and dispatch.
+- `Incomplete Types` - Declared but not fully defined yet, for example `struct Node;`.
+- `Variable Length Arrays (VLA)` - Arrays whose size is determined at runtime (optional in newer standards/compiler-dependent).
+
+# 𝗥𝗲𝘀𝗲𝗿𝘃𝗲𝗱 𝗪𝗼𝗿𝗱𝘀/𝗞𝗲𝘆𝘄𝗼𝗿𝗱𝘀
+
+- `auto` - Automatic storage duration.
+- `break` - Exit a loop or switch.
+- `case` - Introduces a case in a switch statement.
+- `char` - Character integer type.
+- `const` - Read-only qualifier.
+- `continue` - Skip to the next loop iteration.
+- `default` - Default branch in a switch statement.
+- `do` - Starts a `do/while` loop.
+- `double` - Double-precision floating point type.
+- `else` - Alternate conditional branch.
+- `enum` - Defines an enumeration type.
+- `extern` - Declares external linkage.
+- `float` - Single-precision floating point type.
+- `for` - Starts a `for` loop.
+- `goto` - Unconditional jump to a label.
+- `if` - Starts a conditional statement.
+- `inline` - Suggests inline function expansion.
+- `int` - Standard integer type.
+- `long` - Long integer modifier/type.
+- `register` - Register storage hint.
+- `restrict` - Pointer aliasing qualifier.
+- `return` - Return from a function.
+- `short` - Short integer modifier/type.
+- `signed` - Signed modifier/type.
+- `sizeof` - Returns the size of a type/object.
+- `static` - Static storage duration or internal linkage.
+- `struct` - Defines a structure type.
+- `switch` - Starts a switch statement.
+- `typedef` - Creates a type alias.
+- `union` - Defines a union type.
+- `unsigned` - Unsigned modifier/type.
+- `void` - No value type.
+- `volatile` - Volatile qualifier.
+- `while` - Starts a while loop.
+- `_Alignas` - Alignment specifier.
+- `_Alignof` - Alignment operator.
+- `_Atomic` - Atomic type qualifier.
+- `_Bool` - Boolean type.
+- `_Complex` - Complex number type.
+- `_Generic` - Generic selection.
+- `_Imaginary` - Imaginary number type (rare/optional).
+- `_Noreturn` - Function does not return.
+- `_Static_assert` - Compile-time assertion.
+- `_Thread_local` - Thread-local storage duration.
+
+# 𝗢𝗽𝗲𝗿𝗮𝘁𝗼𝗿𝘀
+
+### Logical Operators
+
+- `//` - Single-line comment.
+- `/* */` - Multi-line comment block.
+- `;` - Statement terminator.
+- `,` - Separator or comma operator.
+- `=` - Assignment.
+- `+` - Addition.
+- `-` - Subtraction / unary negation.
+- `*` - Multiplication / pointer declarator / dereference in expressions.
+- `/` - Division.
+- `%` - Modulus.
+- `++` - Increment.
+- `--` - Decrement.
+- `==` - Equality comparison.
+- `!=` - Inequality comparison.
+- `>` - Greater than.
+- `<` - Less than.
+- `>=` - Greater than or equal.
+- `<=` - Less than or equal.
+- `&&` - Logical AND.
+- `||` - Logical OR.
+- `!` - Logical NOT.
+- `&` - Address-of operator / bitwise AND.
+- `|` - Bitwise OR.
+- `^` - Bitwise XOR.
+- `~` - Bitwise NOT.
+- `<<` - Left shift.
+- `>>` - Right shift.
+- `+= -= *= /= %= &= |= ^= <<= >>=` - Compound assignment.
+- `[]` - Array subscript.
+- `()` - Grouping, function call, parameter list.
+- `{}` - Block scope / initializer.
+- `.` - Access structure/union member.
+- `->` - Access structure/union member through a pointer.
+- `? :` - Ternary conditional operator.
+- `(type)` - Cast operator.
+- `sizeof` - Size operator.
+
+# 𝗗𝗶𝗿𝗲𝗰𝘁𝗼𝗿𝘆 𝗧𝗿𝗮𝘃𝗲𝗿𝘀𝗮𝗹
+
+- `.` - Current directory.
+- `..` - Parent directory.
+- `/` - Root directory on Unix-like systems.
+- `\` - Directory separator in Windows paths.
+- `./file.txt` - Relative path.
+- `/home/user/file.txt` - Absolute Unix path.
+- `C:\temp\file.txt` - Absolute Windows path string literal.
+Note: Directory traversal is not a core C language feature, but paths are commonly passed as strings to file APIs like `fopen()`, `remove()`, and `rename()`.
+
+# 𝗤𝘂𝗼𝘁𝗶𝗻𝗴
+
+- `\` - Escape character inside character/string literals.
+- `''` - Character literal, for example `'A'`, `'\n'`, `'\0'`.
+- `""` - String literal, for example `"Hello world"`.
+- `\n` - Newline escape.
+- `\t` - Tab escape.
+- `\\` - Backslash escape.
+- `\"` - Double quote escape.
+- `\'` - Single quote escape.
+- `\0` - `NUL` byte / string terminator.
+- `\x41` - Hexadecimal escape.
+- `\101` - Octal escape.
+
+# 𝗥𝗲𝗱𝗶𝗿𝗲𝗰𝘁𝗶𝗼𝗻
+
+- `>` - Shell redirection of `stdout` to a file.
+- `>>` - Shell append redirection.
+- `<` - Shell redirection of `stdin` from a file.
+- `|` - Shell pipeline.
+Note: Redirection is typically handled by the shell, not the C language itself.
+
+### C Equivalents
+
+- `fopen()` - Open a file stream.
+- `freopen()` - Rebind `stdin`, `stdout`, or `stderr` to a file.
+- `fprintf()` - Write formatted data to a stream.
+- `fscanf()` - Read formatted data from a stream.
+
+# 𝗚𝗿𝗼𝘂𝗽𝗶𝗻𝗴
+
+- `{}` - Block scope / compound statement / initializer list.
+- `()` - Expression grouping, function parameter list, function call.
+- `[]` - Array declaration and indexing.
+- `struct {}` - Group related named fields into one type.
+- `union {}` - Group overlapping fields into one type.
+Note: Variables declared inside a block generally have local scope and automatic storage duration unless marked `static`.
+
+# 𝗚𝗹𝗼𝗯𝘀/𝗪𝗶𝗹𝗱𝗰𝗮𝗿𝗱𝘀
+
+- `?` - Shell wildcard for a single character (not a C wildcard).
+- `*` - Pointer declarator/dereference in C, shell wildcard for any amount of characters outside C.
+- `[...]` - Array syntax in C, shell character class/range outside C.
+Note: Globbing/wildcards are shell behavior, not standard C syntax. In C, wildcard-like behavior must be implemented manually or via libraries/APIs.
+
+# 𝗘𝘅𝗮𝗺𝗽𝗹𝗲𝘀
+
+## 𝗚𝗲𝗻𝗲𝗿𝗮𝗹 𝗧𝘆𝗽𝗲𝘀
+
+### 𝗩𝗮𝗿𝗶𝗮𝗯𝗹𝗲 (𝗩𝗮𝗿)
+
+- `#Declare variables.`
+- `int number = 10;`
+- `char grade = 'A';`
+- `double price = 19.99;`
+- `const char *message = "Hello";`
+
+### 𝗜𝗻𝘁𝗲𝗴𝗲𝗿 (𝗜𝗻𝘁)
+
+- `#Declare integers.`
+- `int x = 0;`
+- `unsigned int y = 42;`
+- `long z = 100000L;`
+- `long long big = 9000000000LL;`
+
+### 𝗙𝗹𝗼𝗮𝘁
+
+- `#Declare floating-point values.`
+- `float f = 10.5f;`
+- `double d = 20.12;`
+- `long double ld = 30.125L;`
+
+### 𝗙𝘂𝗻𝗰𝘁𝗶𝗼𝗻 (𝗙𝘂𝗻𝗰)
+
+- `#Declare a function.`
+- `#include <stdio.h>`
+- `void greet(void) {`
+- `    printf("Hello world!\n");`
+- `}`
+- `int add(int a, int b) {`
+- `    return a + b;`
+- `}`
+- `int main(void) {`
+- `    greet();`
+- `    printf("%d\n", add(2, 3));`
+- `    return 0;`
+- `}`
+
+## 𝗖𝗼𝗻𝗱𝗶𝘁𝗶𝗼𝗻𝗮𝗹 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁𝘀
+
+### 𝗕𝗼𝗼𝗹𝗲𝗮𝗻 (𝗕𝗼𝗼𝗹)
+
+- `#Declare a boolean.`
+- `#include <stdbool.h>`
+- `bool flag = true;`
+- `#Use boolean in a conditional statement.`
+- `if (flag) {`
+- `    printf("The boolean is true.\n");`
+- `} else {`
+- `    printf("The boolean is false.\n");`
+- `}`
+
+### 𝗜𝗳 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁
+
+- `#Define variables.`
+- `int number1 = 5;`
+- `int number2 = 3;`
+- `#Check if the number is greater than 3.`
+- `if (number1 > number2) {`
+- `    printf("The value is greater than %d\n", number2);`
+- `}`
+
+### 𝗜𝗳/𝗘𝗹𝘀𝗲 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁
+
+- `#Initialize a variable.`
+- `int number = 8;`
+- `#Start the comparison.`
+- `if (number > 10) {`
+- `    printf("Number is greater than 10!\n");`
+- `} else {`
+- `    printf("Number is 10 or less.\n");`
+- `}`
+
+## 𝗟𝗼𝗼𝗽𝘀
+
+### 𝗙𝗼𝗿 𝗟𝗼𝗼𝗽
+
+- `#This loop iterates from 1 to 5 and prints the current number.`
+- `for (int i = 1; i <= 5; i++) {`
+- `    printf("Number: %d\n", i);`
+- `}`
+
+### 𝗪𝗵𝗶𝗹𝗲 𝗟𝗼𝗼𝗽
+
+- `#Initialize the counter variable.`
+- `int i = 1;`
+- `#Loop while 'i' is less than or equal to 5.`
+- `while (i <= 5) {`
+- `    printf("Count is %d.\n", i);`
+- `    i++;`
+- `}`
+- `printf("Loop finished\n");`
+
+## 𝗔𝗿𝗿𝗮𝘆𝘀
+
+### 𝗜𝗻𝗱𝗲𝘅𝗲𝗱 𝗔𝗿𝗿𝗮𝘆
+
+- `#Declare an array.`
+- `int numbers[] = {10, 20, 30};`
+- `#Access a specific element.`
+- `printf("First: %d\n", numbers[0]);`
+- `#Access every element.`
+- `for (size_t i = 0; i < sizeof(numbers) / sizeof(numbers[0]); i++) {`
+- `    printf("%d\n", numbers[i]);`
+- `}`
+
+### 𝗔𝘀𝘀𝗼𝗰𝗶𝗮𝘁𝗶𝘃𝗲 𝗔𝗿𝗿𝗮𝘆
+
+- `#C does not have true associative arrays built into the language.`
+- `#A common substitute is a struct with named fields.`
+- `struct User {`
+- `    const char *name;`
+- `    const char *email;`
+- `    int age;`
+- `};`
+- `struct User user = {"John Doe", "john@example.com", 30};`
+- `printf("Name: %s\n", user.name);`
+- `printf("Email: %s\n", user.email);`
+- `printf("Age: %d\n", user.age);`
+
+## 𝗢𝘁𝗵𝗲𝗿
+
+### 𝗖𝗮𝘀𝗲 𝗦𝘁𝗮𝘁𝗲𝗺𝗲𝗻𝘁
+
+- `int menu = 2;`
+- `switch (menu) {`
+- `    case 1:`
+- `        printf("Option one selected.\n");`
+- `        break;`
+- `    case 2:`
+- `        printf("Option two selected.\n");`
+- `        break;`
+- `    case 3:`
+- `        printf("Option three selected.\n");`
+- `        break;`
+- `    default:`
+- `        printf("Unknown option.\n");`
+- `        break;`
+- `}`
+
+### 𝗢𝗯𝗷𝗲𝗰𝘁
+
+- `#C does not have objects in the OOP sense built into the language.`
+- `#The closest equivalent is usually a struct, sometimes paired with function pointers.`
+- `struct Point {`
+- `    int x;`
+- `    int y;`
+- `};`
+- `struct Point p = {10, 20};`
+- `printf("x: %d\n", p.x);`
+- `printf("y: %d\n", p.y);`
