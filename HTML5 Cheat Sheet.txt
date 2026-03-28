@@ -1,0 +1,67 @@
+𝗗𝗢𝗖𝗧𝗬𝗣𝗘
+
+<!DOCTYPE html> - Declares the document an HTML file.
+
+𝗗𝗮𝘁𝗮 𝗧𝘆𝗽𝗲𝘀
+
+• Text (string) - Any sequence of characters. Example: value="hello"
+• Number - Numeric values. Example: input type="number"
+• Boolean - true/false (often implicit). Example: disabled, checked
+• Date/Time - Used in inputs. Example: type="date", "datetime-local"
+• URL - Web addresses. Example: type="url"
+• Email - Email format validation. Example: type="email"
+• File - File uploads. Example: type="file"
+• Color - Color picker. Example: type="color"
+• Range - Slider input. Example: type="range"
+• Tel - Telephone numbers. Example: type="tel"
+• Search - Search fields. Example: type="search"
+
+𝗧𝗮𝗴𝘀
+
+<html> - Root element
+<head> - Metadata container
+<title> - Page title
+<meta> - Metadata (charset, viewport, SEO)
+<link> - External resources (CSS)
+<style> - Internal CSS
+<script> - JavaScript
+<body> - Visible page content
+<header> - Top section
+<nav> - Navigation links
+<main> - Main content
+<section> - Grouped content
+<article> - Independent content
+<aside> - Sidebar content
+<footer> - Bottom section
+
+Text Tags:
+<h1>-<h6> - Headings
+<p> - Paragraph
+<span> - Inline container
+<div> - Block container
+
+Media:
+<img> - Image
+<video> - Video
+<audio> - Audio
+
+Links:
+<a> - Anchor link
+
+Lists:
+<ul> - Unordered list
+<ol> - Ordered list
+<li> - List item
+
+Tables:
+<table>, <thead>, <tbody>, <tr>, <td>, <th>
+
+Forms:
+<form>, <input>, <textarea>, <select>, <option>, <button>, <label>
+
+Semantic:
+<strong>, <em>, <mark>, <small>
+
+Other:
+<br> - Line break
+<hr> - Horizontal line
