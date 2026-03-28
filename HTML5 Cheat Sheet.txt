@@ -4,8 +4,6 @@
 
 𝗗𝗮𝘁𝗮 𝗧𝘆𝗽𝗲𝘀
 
-𝗚𝗲𝗻𝗲𝗿𝗮𝗹
-
 • Text (string) - Any sequence of characters. Example: value="hello"
 • Number - Numeric values. Example: input type="number"
 • Boolean - true/false (often implicit). Example: disabled, checked
@@ -19,6 +17,8 @@
 • Search - Search fields. Example: type="search"
 
 𝗧𝗮𝗴𝘀
+
+𝗚𝗲𝗻𝗲𝗿𝗮𝗹
 
 • <html> - Root element
 • <head> - Metadata container
